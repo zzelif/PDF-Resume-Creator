@@ -28,7 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblHeader = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblHeader
+            // 
+            this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHeader.AutoSize = true;
+            this.lblHeader.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.ForeColor = System.Drawing.Color.Orange;
+            this.lblHeader.Location = new System.Drawing.Point(196, 66);
+            this.lblHeader.Name = "lblHeader";
+            this.lblHeader.Size = new System.Drawing.Size(350, 25);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "Generate a PDF from a JSON file";
+            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -36,14 +52,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(808, 504);
+            this.Controls.Add(this.lblHeader);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.Text = "PDF Resume Creator";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblHeader;
     }
 }
 
