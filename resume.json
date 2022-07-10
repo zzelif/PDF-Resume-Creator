@@ -1,0 +1,24 @@
+{
+  "FirstName": "Dan Gabriel",
+  "LastName": "Lettac",
+  "Email": "dan.lettac@gmail.com",
+  "Phone": "0928-212-7288",
+  "Website": "github.com/zzelif/",
+  "Address": {
+    "Street": "24 M. Borja Extension, Little Baguio",
+    "Province": "Rizal",
+    "Municipality": "Taytay",
+    "PostalCode": "1920",
+    "Region": "IV-A(CALABARZON)",
+  },
+  "College": "PUP - BS in Computer Engineering",
+  "CollegeGraduated": "Graduating June 2025",
+  "HighSchool": "Siena College of Taytay - STEM",
+  "HighSchoolGraduated": "Graduated June 2021",
+  "Award": "Salutatorian",
+  "Skill1": "Technical Proficiency in some Microsoft Programs",
+  "Skill2": "Surface-level knowledge in C# and Python",
+  "Skill3": "Effective and Pinpoint decision making",
+  "Skill4": "Operation analysis",
+  "Skill5": "Problem Solving"
+}

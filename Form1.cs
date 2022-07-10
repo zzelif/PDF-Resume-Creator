@@ -9,7 +9,7 @@ namespace PDF_Resume_Creator
 {
     public partial class Form1 : Form
     {
-        private readonly string _fileName = @"C:\Users\ASUS\source\repos\PDF Resumer Creator\resume.json";
+        private readonly string _fileName = @"C:\Users\ASUS\source\repos\PDF Resume Creator\resume.json";
         public Form1()
         {
             InitializeComponent();
@@ -52,7 +52,7 @@ namespace PDF_Resume_Creator
                 jsonFromFile = reader.ReadToEnd();
             }
 
-            var resumeFromJson = JsonConvert.DeserializeObject<Resume>(jsonFromFile);
+            Resume resumeFromJson = JsonConvert.DeserializeObject<Resume>(jsonFromFile);
 
             string Firstname = resumeFromJson.FirstName;
             string Lastname = resumeFromJson.LastName;
