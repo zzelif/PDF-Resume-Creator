@@ -131,7 +131,7 @@ namespace PDF_Resume_Creator
                     //First Name and Last Name Big
 
                     //Basic Info
-                    graph.DrawString("Basic Info:", bigfont, XBrushes.White, new XRect(marginleft, initialleft + 20, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString("PERSONAl INFO:", bigfont, XBrushes.White, new XRect(marginleft, initialleft + 20, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     graph.DrawString("First Name: " + Firstname, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 50, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
@@ -158,7 +158,7 @@ namespace PDF_Resume_Creator
 
                     graph.DrawString(PostalCode, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 175, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    graph.DrawString(Region, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 205, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString(Region, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 230, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     //right side of PDF
 
@@ -200,7 +200,7 @@ namespace PDF_Resume_Creator
                     //Line Separator
                     graph.DrawRectangle(linerright, marginmiddle, initialmiddle - 5, 350, 1);
 
-                    graph.DrawString("Skills:", bigfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString("Hard and Soft Skills:", bigfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     graph.DrawString(Skill1, smallfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle + 30, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
