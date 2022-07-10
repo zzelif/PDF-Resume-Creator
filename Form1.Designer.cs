@@ -70,6 +70,7 @@
             this.Controls.Add(this.lblHeader);
             this.Name = "Form1";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PDF Resume Creator";
             this.ResumeLayout(false);
             this.PerformLayout();
