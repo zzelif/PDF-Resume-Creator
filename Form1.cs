@@ -13,6 +13,7 @@ using System.IO;
 using PdfSharp.Pdf;
 using PdfSharp.Drawing;
 using System.Diagnostics;
+using System.Windows;
 
 namespace PDF_Resume_Creator
 {
@@ -24,11 +25,6 @@ namespace PDF_Resume_Creator
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGenerate_Click(object sender, EventArgs e)
         {
 
         }

@@ -30,7 +30,6 @@
         {
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnBrowse = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -59,20 +58,6 @@
             this.btnGenerate.TabIndex = 1;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = false;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.Location = new System.Drawing.Point(144, 133);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(138, 56);
-            this.btnBrowse.TabIndex = 2;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = false;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // Form1
             // 
@@ -80,7 +65,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(459, 375);
-            this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.lblHeader);
             this.Name = "Form1";
@@ -95,7 +79,6 @@
 
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Button btnBrowse;
     }
 }
 
