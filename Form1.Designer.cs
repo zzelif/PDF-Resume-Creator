@@ -30,7 +30,6 @@
         {
             this.lblHeader = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.btnDisplay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHeader
@@ -61,26 +60,12 @@
             this.btnGenerate.UseVisualStyleBackColor = false;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // btnDisplay
-            // 
-            this.btnDisplay.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisplay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisplay.Location = new System.Drawing.Point(144, 284);
-            this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(138, 56);
-            this.btnDisplay.TabIndex = 2;
-            this.btnDisplay.Text = "Display";
-            this.btnDisplay.UseVisualStyleBackColor = false;
-            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(459, 375);
-            this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.lblHeader);
             this.Name = "Form1";
@@ -95,7 +80,6 @@
 
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.Button btnDisplay;
     }
 }
 

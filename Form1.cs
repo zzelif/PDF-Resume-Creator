@@ -25,7 +25,8 @@ namespace PDF_Resume_Creator
             public string Email { get; set; }
             public string Phone { get; set; }
             public string Website { get; set; }
-            public string Street { get; set; }
+            public string Street1 { get; set; }
+            public string Street2 { get; set; }
             public string Province { get; set; }
             public string Municipality { get; set; }
             public string PostalCode { get; set; }
@@ -57,7 +58,8 @@ namespace PDF_Resume_Creator
             string Phone = resumeFromJson.Phone;
             string Website = resumeFromJson.Website;
 
-            string Street = resumeFromJson.Street;
+            string Street1 = resumeFromJson.Street1;
+            string Street2 = resumeFromJson.Street2;
             string Province = resumeFromJson.Province;
             string Municipality = resumeFromJson.Municipality;
             string PostalCode = resumeFromJson.PostalCode;
@@ -90,52 +92,34 @@ namespace PDF_Resume_Creator
 
                     XGraphics graph = XGraphics.FromPdfPage(page);
 
-                    //call fonts
-                    XFont bigfont = new XFont("Gobold", 18, XFontStyle.Regular);
-                    XFont smallfont = new XFont("Rockwell", 12, XFontStyle.Regular);
-                    XFont titlefont = new XFont("Cocogoose", 35, XFontStyle.Regular);
+                    XFont bigfont = new XFont("Garet", 18, XFontStyle.Bold);
+                    XFont smallfont = new XFont("Garet", 14, XFontStyle.Regular);
+                    XFont titlefont = new XFont("Garet", 35, XFontStyle.Bold);
 
-                    //Draw pens
-                    XPen pen = new XPen(XColors.White, 20);
-                    XPen linerleft = new XPen(XColors.Black, 1); ;
-                    XPen linerright = new XPen(XColors.DarkGray, 1);
+                    XPen pen = new XPen(XColors.WhiteSmoke, 20);
+                    XPen linerleft = new XPen(XColors.AntiqueWhite, 1); ;
+                    XPen linerright = new XPen(XColors.GhostWhite, 1);
 
 
-
-                    //bg color
-
-                    graph.DrawRoundedRectangle(XBrushes.LightSkyBlue, 0, 0, page.Width.Point, page.Height.Point, 30, 20);
-                    graph.DrawRoundedRectangle(XBrushes.WhiteSmoke, 200, 50, page.Width.Point, page.Height.Point, 100, 100);
-
-                    //bg border
+                    graph.DrawRoundedRectangle(XBrushes.Bisque, 0, 0, page.Width.Point, page.Height.Point, 30, 20);
+                    graph.DrawRoundedRectangle(XBrushes.MistyRose, 200, 50, page.Width.Point, page.Height.Point, 100, 100);
                     graph.DrawRectangle(pen, 0, 0, page.Width.Point, page.Height.Point);
 
 
+                    graph.DrawString("ENTRY LEVEL ENGINEER", bigfont, XBrushes.RosyBrown, new XRect(0, 20, page.Width.Point - 20, page.Height.Point - 50), XStringFormats.TopRight);
 
-                    //Draw Resume in the top center of PDF
-                    graph.DrawString("RESUME", bigfont, XBrushes.White, new XRect(0, 20, page.Width.Point - 20, page.Height.Point - 50), XStringFormats.TopRight);
 
-                    //Makes a variable to define the margin for the left side and the starting y coordinate
                     int marginleft = 25;
                     int initialleft = 200;
 
-                    //leftside of pdf
-                    //Always add +15 when there is a new info
 
-                    //grab 1x1 photo not included ng json file
-                    string jpeg = @"C:\Users\ASUS\Downloads\Dan Gabriel R. Lettac.png";
-                    XImage image = XImage.FromFile(jpeg);
+                    string png = @"C:\Users\ASUS\Downloads\Dan Gabriel R. Lettac.png";
+                    XImage image = XImage.FromFile(png);
                     graph.DrawImage(image, marginleft, 50, 150, 150);
 
 
-                    //First Name and Last Name Big
 
-                    //Basic Info
-                    graph.DrawString("PERSONAl INFO:", bigfont, XBrushes.White, new XRect(marginleft, initialleft + 20, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
-
-                    graph.DrawString("First Name: " + Firstname, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 50, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
-
-                    graph.DrawString("Last Name: " + Lastname, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 65, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString("PERSONAL DETAILS:", bigfont, XBrushes.RosyBrown, new XRect(marginleft, initialleft + 60, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     graph.DrawString(Email, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 80, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
@@ -144,35 +128,37 @@ namespace PDF_Resume_Creator
                     graph.DrawString(Phone, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 110, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
 
-                    //Line Separator
+
                     graph.DrawRectangle(linerleft, marginleft, initialleft + 130, 150, 1);
 
-                    //Address
-                    graph.DrawString("Address:", bigfont, XBrushes.White, new XRect(marginleft, initialleft + 135, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    graph.DrawString(Street, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 160, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString("Address:", bigfont, XBrushes.RosyBrown, new XRect(marginleft, initialleft + 135, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    graph.DrawString(Province, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 190, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString(Street1, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 160, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    graph.DrawString(Municipality, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 205, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString(Street2, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 190, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+
+                    graph.DrawString(Province, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 205, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+
+                    graph.DrawString(Municipality, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 220, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     graph.DrawString(PostalCode, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 175, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    graph.DrawString(Region, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 230, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString(Region, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 235, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    //right side of PDF
+
 
                     int marginmiddle = 220;
                     int initialmiddle = 200;
 
-                    //BIG First name and last name
+
                     graph.DrawString(Firstname, titlefont, XBrushes.Black, new XRect(marginmiddle, initialmiddle - 110, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
                     graph.DrawString(Lastname, titlefont, XBrushes.Black, new XRect(marginmiddle, initialmiddle - 70, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    //Line Separator
+
                     graph.DrawRectangle(linerright, marginmiddle, initialmiddle - 10, 350, 1);
 
-                    //Education
+
                     graph.DrawString("Education:", bigfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     graph.DrawString(College, smallfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle + 30, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
@@ -183,21 +169,17 @@ namespace PDF_Resume_Creator
 
                     graph.DrawString(HighSchoolGraduated, smallfont, XBrushes.Black, new XRect(marginmiddle + 25, initialmiddle + 75, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    //Awards
 
                     initialmiddle = initialmiddle + 100;
 
-                    //Line Separator
                     graph.DrawRectangle(linerright, marginmiddle, initialmiddle - 5, 350, 1);
 
                     graph.DrawString("Awards:", bigfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     graph.DrawString(Award, smallfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle + 30, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    //Skills
-
                     initialmiddle = initialmiddle + 150;
-                    //Line Separator
+
                     graph.DrawRectangle(linerright, marginmiddle, initialmiddle - 5, 350, 1);
 
                     graph.DrawString("Hard and Soft Skills:", bigfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
@@ -215,45 +197,9 @@ namespace PDF_Resume_Creator
 
                     pdf.Save(saveFileDialog.FileName);
                 }
+                MessageBox.Show("This will be saved in the Resume folder");
             }
             Application.Restart();
-        }
-
-        private void btnDisplay_Click(object sender, EventArgs e)
-        {
-            string jsonFromFile;
-            using (var reader = new StreamReader(_fileName))
-            {
-                jsonFromFile = reader.ReadToEnd();
-            }
-            var resumeFromJson = JsonConvert.DeserializeObject<Resume>(jsonFromFile);
-
-            string Firstname = resumeFromJson.FirstName;
-            string Lastname = resumeFromJson.LastName;
-            string Email = resumeFromJson.Email;
-            string Phone = resumeFromJson.Phone;
-            string Website = resumeFromJson.Website;
-
-            string Street = resumeFromJson.Street;
-            string Province = resumeFromJson.Province;
-            string Municipality = resumeFromJson.Municipality;
-            string PostalCode = resumeFromJson.PostalCode;
-            string Region = resumeFromJson.Region;
-
-            string College = resumeFromJson.College;
-            string CollegeGraduated = resumeFromJson.CollegeGraduated;
-            string HighSchool = resumeFromJson.HighSchool;
-            string HighSchoolGraduated = resumeFromJson.HighSchoolGraduated;
-
-            string Award = resumeFromJson.Award;
-
-            string Skill1 = resumeFromJson.Skill1;
-            string Skill2 = resumeFromJson.Skill2;
-            string Skill3 = resumeFromJson.Skill3;
-            string Skill4 = resumeFromJson.Skill4;
-            string Skill5 = resumeFromJson.Skill5;
-
-            MessageBox.Show("Address: " + Street + Province + Municipality + PostalCode + Region);
         }
     }
 }
