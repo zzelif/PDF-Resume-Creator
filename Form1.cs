@@ -2,8 +2,11 @@
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System;
+using System.Text;
 using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Linq;
 
 namespace PDF_Resume_Creator
 {
@@ -13,11 +16,6 @@ namespace PDF_Resume_Creator
         public Form1()
         {
             InitializeComponent();
-            string jsonFromFile;
-            using (var reader = new StreamReader(_fileName))
-            {
-                jsonFromFile = reader.ReadToEnd();
-            }
         }
 
         public class Resume
@@ -51,8 +49,7 @@ namespace PDF_Resume_Creator
             {
                 jsonFromFile = reader.ReadToEnd();
             }
-
-            Resume resumeFromJson = JsonConvert.DeserializeObject<Resume>(jsonFromFile);
+            var resumeFromJson = JsonConvert.DeserializeObject<Resume>(jsonFromFile);
 
             string Firstname = resumeFromJson.FirstName;
             string Lastname = resumeFromJson.LastName;
@@ -89,26 +86,51 @@ namespace PDF_Resume_Creator
                     PdfDocument pdf = new PdfDocument();
                     pdf.Info.Title = Lastname + "_" + "Resume";
                     PdfPage page = pdf.AddPage();
-                    XGraphics graph = XGraphics.FromPdfPage(page); ;
-                    XFont bigfont = new XFont("TimesNewRoman", 18, XFontStyle.Regular);
-                    XFont smallfont = new XFont("TimesNewRoman", 12, XFontStyle.Regular);
-                    XFont titlefont = new XFont("TimesNewRoman", 35, XFontStyle.Regular);
+
+
+                    XGraphics graph = XGraphics.FromPdfPage(page);
+
+                    //call fonts
+                    XFont bigfont = new XFont("Gobold", 18, XFontStyle.Regular);
+                    XFont smallfont = new XFont("Rockwell", 12, XFontStyle.Regular);
+                    XFont titlefont = new XFont("Cocogoose", 35, XFontStyle.Regular);
+
+                    //Draw pens
                     XPen pen = new XPen(XColors.White, 20);
                     XPen linerleft = new XPen(XColors.Black, 1); ;
                     XPen linerright = new XPen(XColors.DarkGray, 1);
-                    graph.DrawRoundedRectangle(XBrushes.Bisque, 0, 0, page.Width.Point, page.Height.Point, 30, 20);
+
+
+
+                    //bg color
+
+                    graph.DrawRoundedRectangle(XBrushes.LightSkyBlue, 0, 0, page.Width.Point, page.Height.Point, 30, 20);
                     graph.DrawRoundedRectangle(XBrushes.WhiteSmoke, 200, 50, page.Width.Point, page.Height.Point, 100, 100);
+
+                    //bg border
                     graph.DrawRectangle(pen, 0, 0, page.Width.Point, page.Height.Point);
 
-                    graph.DrawString(Lastname + "" + Firstname, bigfont, XBrushes.White, new XRect(0, 20, page.Width.Point - 20, page.Height.Point - 50), XStringFormats.TopRight);
 
+
+                    //Draw Resume in the top center of PDF
+                    graph.DrawString("RESUME", bigfont, XBrushes.White, new XRect(0, 20, page.Width.Point - 20, page.Height.Point - 50), XStringFormats.TopRight);
+
+                    //Makes a variable to define the margin for the left side and the starting y coordinate
                     int marginleft = 25;
                     int initialleft = 200;
 
-                    string png = @"C:\Users\ASUS\Downloads\Dan Gabriel R. Lettac.png";
-                    XImage image = XImage.FromFile(png);
+                    //leftside of pdf
+                    //Always add +15 when there is a new info
+
+                    //grab 1x1 photo not included ng json file
+                    string jpeg = @"C:\Users\ASUS\Downloads\Dan Gabriel R. Lettac.png";
+                    XImage image = XImage.FromFile(jpeg);
                     graph.DrawImage(image, marginleft, 50, 150, 150);
 
+
+                    //First Name and Last Name Big
+
+                    //Basic Info
                     graph.DrawString("Basic Info:", bigfont, XBrushes.White, new XRect(marginleft, initialleft + 20, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     graph.DrawString("First Name: " + Firstname, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 50, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
@@ -132,7 +154,7 @@ namespace PDF_Resume_Creator
 
                     graph.DrawString(Province, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 190, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    graph.DrawString(Municipality, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 190, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString(Municipality, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 205, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     graph.DrawString(PostalCode, smallfont, XBrushes.Black, new XRect(marginleft, initialleft + 175, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
@@ -163,7 +185,7 @@ namespace PDF_Resume_Creator
 
                     //Awards
 
-                    initialmiddle += 100;
+                    initialmiddle = initialmiddle + 100;
 
                     //Line Separator
                     graph.DrawRectangle(linerright, marginmiddle, initialmiddle - 5, 350, 1);
@@ -174,7 +196,7 @@ namespace PDF_Resume_Creator
 
                     //Skills
 
-                    initialmiddle += 150;
+                    initialmiddle = initialmiddle + 150;
                     //Line Separator
                     graph.DrawRectangle(linerright, marginmiddle, initialmiddle - 5, 350, 1);
 
@@ -192,7 +214,6 @@ namespace PDF_Resume_Creator
 
 
                     pdf.Save(saveFileDialog.FileName);
-
                 }
             }
             Application.Restart();
