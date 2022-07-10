@@ -35,7 +35,10 @@ namespace PDF_Resume_Creator
             public string CollegeGraduated { get; set; }
             public string HighSchool { get; set; }
             public string HighSchoolGraduated { get; set; }
-            public string Award { get; set; }
+            public string Award1 { get; set; }
+            public string Award2 { get; set; }
+            public string Award3 { get; set; }
+            public string Award4 { get; set; }
             public string Skill1 { get; set; }
             public string Skill2 { get; set; }
             public string Skill3 { get; set; }
@@ -70,7 +73,10 @@ namespace PDF_Resume_Creator
             string HighSchool = resumeFromJson.HighSchool;
             string HighSchoolGraduated = resumeFromJson.HighSchoolGraduated;
 
-            string Award = resumeFromJson.Award;
+            string Award1 = resumeFromJson.Award1;
+            string Award2 = resumeFromJson.Award2;
+            string Award3 = resumeFromJson.Award3;
+            string Award4 = resumeFromJson.Award4;
 
             string Skill1 = resumeFromJson.Skill1;
             string Skill2 = resumeFromJson.Skill2;
@@ -175,7 +181,13 @@ namespace PDF_Resume_Creator
 
                     graph.DrawString("Award(s):", bigfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
-                    graph.DrawString(Award, smallfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle + 30, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+                    graph.DrawString(Award1, smallfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle + 30, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+
+                    graph.DrawString(Award2, smallfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle + 50, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+
+                    graph.DrawString(Award3, smallfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle + 70, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
+
+                    graph.DrawString(Award4, smallfont, XBrushes.Black, new XRect(marginmiddle, initialmiddle + 90, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
 
                     initialmiddle = initialmiddle + 180;
 
