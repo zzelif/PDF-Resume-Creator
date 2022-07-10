@@ -39,7 +39,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHeader.AutoSize = true;
             this.lblHeader.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHeader.ForeColor = System.Drawing.Color.Orange;
+            this.lblHeader.ForeColor = System.Drawing.Color.Brown;
             this.lblHeader.Location = new System.Drawing.Point(45, 40);
             this.lblHeader.Name = "lblHeader";
             this.lblHeader.Size = new System.Drawing.Size(350, 25);
@@ -64,7 +64,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(459, 375);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.lblHeader);

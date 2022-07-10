@@ -129,7 +129,7 @@ namespace PDF_Resume_Creator
 
 
 
-                    graph.DrawRectangle(linerleft, marginleft, initialleft + 160, 150, 1);
+                    graph.DrawRectangle(linerleft, marginleft, initialleft + 155, 150, 1);
 
 
                     graph.DrawString("Address:", bigfont, XBrushes.Brown, new XRect(marginleft, initialleft + 160, page.Width.Point, page.Height.Point), XStringFormats.TopLeft);
