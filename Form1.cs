@@ -40,8 +40,8 @@ namespace PDF_Resume_Creator
             public string Skill3 { get; set; }
             public string Skill4 { get; set; }
             public string Skill5 { get; set; }
-
         }
+
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             string jsonFromFile;
@@ -217,6 +217,43 @@ namespace PDF_Resume_Creator
                 }
             }
             Application.Restart();
+        }
+
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            string jsonFromFile;
+            using (var reader = new StreamReader(_fileName))
+            {
+                jsonFromFile = reader.ReadToEnd();
+            }
+            var resumeFromJson = JsonConvert.DeserializeObject<Resume>(jsonFromFile);
+
+            string Firstname = resumeFromJson.FirstName;
+            string Lastname = resumeFromJson.LastName;
+            string Email = resumeFromJson.Email;
+            string Phone = resumeFromJson.Phone;
+            string Website = resumeFromJson.Website;
+
+            string Street = resumeFromJson.Street;
+            string Province = resumeFromJson.Province;
+            string Municipality = resumeFromJson.Municipality;
+            string PostalCode = resumeFromJson.PostalCode;
+            string Region = resumeFromJson.Region;
+
+            string College = resumeFromJson.College;
+            string CollegeGraduated = resumeFromJson.CollegeGraduated;
+            string HighSchool = resumeFromJson.HighSchool;
+            string HighSchoolGraduated = resumeFromJson.HighSchoolGraduated;
+
+            string Award = resumeFromJson.Award;
+
+            string Skill1 = resumeFromJson.Skill1;
+            string Skill2 = resumeFromJson.Skill2;
+            string Skill3 = resumeFromJson.Skill3;
+            string Skill4 = resumeFromJson.Skill4;
+            string Skill5 = resumeFromJson.Skill5;
+
+            MessageBox.Show("Address: " + Street + Province + Municipality + PostalCode + Region);
         }
     }
 }
