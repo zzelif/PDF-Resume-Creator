@@ -1,0 +1,20 @@
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\PDF Resume Creator.exe.config
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\PDF Resume Creator.exe
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\PDF Resume Creator.pdb
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\PdfSharp.Charting.dll
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\PdfSharp.dll
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\PdfSharp.xml
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\PdfSharp.Charting.xml
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\ASUS\source\repos\PDF Resume Creator\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF Resume Creator.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF Resume Creator.csproj.SuggestedBindingRedirects.cache
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF_Resume_Creator.Form1.resources
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF_Resume_Creator.Properties.Resources.resources
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF Resume Creator.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF Resume Creator.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF Resume Creator.csproj.CopyComplete
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF Resume Creator.exe
+C:\Users\ASUS\source\repos\PDF Resume Creator\obj\Debug\PDF Resume Creator.pdb
